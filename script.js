@@ -1,8 +1,8 @@
 
 const students = [
-    "B.Maï", "B.Eliott", "B.Raphaël", "B.Nathan",
-    "B.Malo", "B.Thomas", "B.Nicolas", "C.Célestin",
-    "C.Gwenola", "C.Oscar", "C.Axel", "D.Gaspard",
+    "BG.Maï", "B.Eliott", "B.Raphaël", "B.Nathan",
+    "B.Malo", "B.Thomas", "BDB.Nicolas", "C.Célestin",
+    "C.Gwenola", "C.Oscar", "C.Axel", "DN.Gaspard",
     "D.Constance", "D.Rose", "F.Baptiste", "G.Eden",
     "G.Pacôme", "J.Lylou", "L.Timothé", "L.Laura",
     "L.Calixte", "M.Apolline", "P.Cassandre", "R.Camille",
