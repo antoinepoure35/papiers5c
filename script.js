@@ -1,4 +1,14 @@
-const students = ["B.Jade", "B.Manon", "B.Camille", "B.Kenza", "D.Inès", "D.Lisa", "D.Mila", "E.Erwan", "E.Simon", "G.Raphaëlle", "G.Arthur", "G.Gabriel", "L.Tiana", "L.Baptiste", "L.Nolwenn", "L.Bertille", "L.Martin", "L.Maxence", "L.Baptiste", "L.Adam", "L.Thomas", "L.Tom", "M.Julian", "M.Evan", "M.Samuel", "M.Elouen", "M.Ombeline", "P.Maxence", "R.Clémence"];
+
+const students = [
+    "B.Maï", "B.Eliott", "B.Raphaël", "B.Nathan",
+    "B.Malo", "B.Thomas", "B.Nicolas", "C.Célestin",
+    "C.Gwenola", "C.Oscar", "C.Axel", "D.Gaspard",
+    "D.Constance", "D.Rose", "F.Baptiste", "G.Eden",
+    "G.Pacôme", "J.Lylou", "L.Timothé", "L.Laura",
+    "L.Calixte", "M.Apolline", "P.Cassandre", "R.Camille",
+    "S.Louna", "T.Emma", "T.Arthur", "Y.Elidjah"
+];
+
 
 function addDocument() {
     const documentName = document.getElementById('documentName').value;
@@ -14,17 +24,23 @@ function addDocument() {
         counter.id = `counter-${documentName}`;
         counter.textContent = `0/${students.length}`;
         
-        students.forEach(student => {
-            const cell = document.createElement('td');
-            cell.className = 'red';
-            cell.innerText = student;
-            cell.onclick = () => {
-                cell.className = cell.className === 'red' ? 'green' : 'red';
-                updateCounter(documentName);
-                saveData();
-            };
-            table.appendChild(cell);
-        });
+		let row;
+		students.forEach((student, index) => {
+			if (index % 4 === 0) {
+				row = document.createElement('tr');
+				table.appendChild(row);
+			}
+
+			const cell = document.createElement('td');
+			cell.className = 'red';
+			cell.innerText = student;
+			cell.onclick = () => {
+				cell.className = cell.className === 'red' ? 'green' : 'red';
+				updateCounter(documentName);
+				saveData();
+			};
+			row.appendChild(cell);
+		});
 
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Supprimer';
